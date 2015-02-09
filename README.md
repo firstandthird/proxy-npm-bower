@@ -8,18 +8,16 @@ A simple Dockerfile that will spin up an nginx reverse proxy for npm and bower. 
 
 * Get container ID: `docker ps`
 * Get IP: `docker inspect --format '{{ .NetworkSettings.IPAddress }}' containerid`
-* Get NPM Port: `docker port containerid 8001`
-* Get Bower Port: `docker port containerid 8002`
 
 ## NPM
 
 ```
-npm install bower --registry http://ip:npm_port/
+npm install bower --registry http://ip:8001/
 ```
 
 ## Bower
 
 ```
-bower install popbox --config.registry="http://ip:bower_port"
+bower install popbox --config.registry="http://ip:8002"
 ```
 
